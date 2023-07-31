@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-
+// import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Home from './Home';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Update from './Update';
+import Create from './Create';
 function App() {
+
+  // const buttonClick = ()=>{
+  //   console.log("Hey why are hitting the button")
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/edit/:id' element={<Update/>}></Route>
+        <Route path='/create' element={<Create/>}></Route>
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
